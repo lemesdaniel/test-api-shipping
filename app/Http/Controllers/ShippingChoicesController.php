@@ -11,6 +11,7 @@ class ShippingChoicesController extends Controller
 
     public function index()
     {
-        return response()->json((new ShippingChoice(new ShippingOption()))->orderedShippping());
+        $options = (new ShippingOption())->get();
+        return response()->json((new ShippingChoice($options))->orderedShippping());
     }
 }

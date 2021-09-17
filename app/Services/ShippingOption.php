@@ -15,7 +15,7 @@ class ShippingOption
 
     public function get()
     {
-        return Http::get($this->url)->array();
+        return Http::get($this->url)->object();
     }
 
 }

@@ -18,6 +18,7 @@ class ShippingChoice
         if (empty($this->shipping)) {
             return [];
         }
+
         $newOrder = $this->shipping->shipping_options;
         usort($newOrder, function ($previus, $current) {
             return ($previus->cost - $current->cost) .
